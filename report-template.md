@@ -2,23 +2,19 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
 In this challenge, the primary purpose is to build a model that can identify the creditworthiness of borrowers. The dataset used pertains to historical lending activity from a peer-to-peer lending services company. 
 
 With a shape of **(77536, 8)** , the dataset consists of **77536 samples** with **8 variabes**. The dependent target variable **loan_status** is our **target variable**, taking values of **0(healthy loan)** & **1(high_risk loan)**. And, the independent variables impacting our target variable includes loan_size, interest_rate, borrower_income, debt_to_income, num_of_accounts, derogatory_marks and total_debt. The very binary nature of the target variable is a pointer to use **Logistic Regeression** to build our machine learning model.
 
 As part of the machine learning process, the first step was to understand the data structure i.e the type of data, presence of any null values and value counts. This initial exploratory analysis pointed out an interesting information on the sample size in terms of our target variable i.e the imbalance in terms of the value counts. **Only 6.7% of the total samples belongs to the high-risk loan category**.
 
-Next, the dataset is split into training and testing datasets. This os done to train the model and later test it on unseen data points to reduce the risk of overfitting. And, StandardScaler module is used to standardize the data points in training dataset. This helps in avoiding assiginig higher weight to features with higher absolute values, for example loan_size as against interest_rate.
+Next, the dataset is split into training and testing datasets. This is done to train the model and later test it on unseen data points to reduce the risk of overfitting. And, StandardScaler module is used to standardize the data points in training dataset. This helps to avoid assiginig higher weight to features with higher absolute values, for example loan_size as against interest_rate.
 
 Finally, after creating instance of the Logistic Regression model, the model is trained on the scaled training dataset and using the actual and predicted values of testing dataset, the model perormance is analysed using a confussion matrix and balanced accuracy scores. 
 
-Further, to reifne the model for better predictions, RadomOverSampling module is used balance the data points for the train data and a new model is trained by fitting the datapoints thus generated.  
+Further, to refine the model for better predictions, RadomOverSampling module is used balance the data points for the train data and a new model is trained by fitting the datapoints thus generated.  
 
 ## Results
-
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
 
 * Machine Learning Model 1:
   * Balanced accuracy score: 98.80%
